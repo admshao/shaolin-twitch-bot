@@ -1,0 +1,87 @@
+﻿{
+	"shaolinbot": {
+		"config": {
+			"viewers": "http://tmi.twitch.tv/group/user/{channel}/chatters",
+			"cap": "CAP REQ :twitch.tv/membership",
+			"host": "irc.twitch.tv",
+            "port": "6667",
+            "channel": "aName",
+			"mods": "aName",
+			"blacklist": "aName;aName",
+            "pass": "oauth:Pass",
+            "account": "aName"
+		},
+		"rewards": {
+			"initial": "0;1000",
+			"interval_bets": 5,
+			"interval_between_bets": 60,
+			"interval_mmr": 10,
+			"interval_bonus": 180,
+			"interval_bonus_mmr": 1000,
+			"points": 2
+		},
+		"greetings": [
+			{
+				"trigger": "ola;oi;oii;oiii;oie;hello;herro;coe;eae;olaa;olaa",
+				"message": "Ola {nick} HeyGuys;Coehh HeyGuys;Fala Manolo, tranquilidade?!;Herro {nick} HeyGuys"
+			},
+			{
+				"trigger": "boa noite;boa tarde;bom dia",
+				"message": "Saudações {nick} MVGame"
+			},
+			{
+				"trigger": "flw;inteh;flws;ate;até;ate mais;até mais;abras;abc;abraço;",
+				"message": "Ate {nick} ResidentSleeper;Flw {nick} ResidentSleeper;Abras Manolo ResidentSleeper;Cya ResidentSleeper"
+			}
+		],
+		"commands": [
+			{
+				"trigger": "!rank",
+				"message": "{nick}: {pos}º com {mmr}",
+				"visible": true
+			},
+			{
+				"trigger": "!top10",
+				"message": "{top}",
+				"visible": true
+			},
+			{
+				"trigger": "!recarregar",
+				"message": "/me Comandos recarregados.",
+				"visible": false
+			},
+			{
+				"trigger": "!ping",
+				"message": "pong",
+				"visible": true
+			},
+			{
+				"trigger": "!start",
+				"message": "Uma nova partida começou! Digite !vitoria <valor> ou !derrota <valor> para participar. As apostas encerrarão em {tempo}min. SwiftRage",
+				"visible": false
+			},
+			{
+				"trigger": "!finish",
+				"message": "{resultado} venceu SwiftRage - Tivemos {numero} vencedor(es). O maior prêmio foi de {max} de MMR para {maior}",
+				"visible": false
+			},
+			{
+				"trigger": "!vitoria",
+				"visible": true
+			},
+			{
+				"trigger": "!derrota",
+				"visible": true
+			},
+			{
+				"trigger": "!odds",
+				"visible": true
+			},
+			{
+				"trigger": "!comandos",
+				"message": "Comandos disponiveis: {cmd}",
+				"visible": false
+			}
+		]
+	}
+}
