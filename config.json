@@ -5,11 +5,11 @@
 			"cap": "CAP REQ :twitch.tv/membership",
 			"host": "irc.twitch.tv",
             "port": "6667",
-            "channel": "aName",
-			"mods": "aName",
-			"blacklist": "aName;aName",
+            "channel": "you-username",
+			"mods": "name-mod",
+			"blacklist": "username1;username2",
             "pass": "oauth:Pass",
-            "account": "aName"
+            "account": "you-username"
 		},
 		"rewards": {
 			"initial": "0;1000",
