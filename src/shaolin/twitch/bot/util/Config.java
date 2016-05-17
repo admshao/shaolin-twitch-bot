@@ -3,6 +3,7 @@ package shaolin.twitch.bot.util;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -24,6 +25,7 @@ public class Config {
 	public static URI URI_CONFIG = null;
 	public static URI URI_USUARIOS = null;
 	public static URI URI_APOSTAS = null;
+	public static URL URL_NODECG = null;
 	
 	public static final Gson GSON = new Gson();
 	public static final Charset CHARSET = Charset.forName("UTF-8");
@@ -114,6 +116,7 @@ public class Config {
         VIEWERS_URL = cfgObj.get("viewers").getAsString();
         VIEWERS_URL = VIEWERS_URL.replace("{channel}", CHANNEL);
         CAP = cfgObj.get("cap").getAsString();
+        URL_NODECG = new URL(cfgObj.get("nodecg").getAsString());
         
         JsonArray saudacoesObj = cfgFileObj.get("shaolinbot").getAsJsonObject().get("greetings").getAsJsonArray();
         Iterator<JsonElement> iterator = saudacoesObj.iterator();

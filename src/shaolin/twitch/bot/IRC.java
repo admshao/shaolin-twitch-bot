@@ -403,6 +403,16 @@ public class IRC {
                                 resp = resp.replace("{top}", sb.toString());
                             } else if (cmd.equals("!odds")) {
                                 printOdds(-1);
+                            } else if (cmd.equals("!songname")) {
+                            	URLConnection connection = Config.URL_NODECG.openConnection();
+                            	BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                            	StringBuffer sb = new StringBuffer();
+                            	String line;
+                            	while ((line = br.readLine()) != null) {
+                            		sb.append(line);
+                        		}
+                            	br.close();
+                            	resp = sb.toString();
                             } else if (cmd.equals("!recarregar")) {
                                 if (Config.mods.contains(nick)) {
                                     running = false;
